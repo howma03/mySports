@@ -1,0 +1,27 @@
+<div>
+    hero-table works!
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Index</th>
+            <th>Event</th>
+            <th>Odd</th>
+            <th>First</th>
+            <th>Last</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let hero of heroes; let i = index;
+      let isEven=even; let isOdd=odd;
+      let isFirst= first; let isLast= last;">
+            <td>{{hero.userName}}</td>
+            <td>{{i}}</td>
+            <td>{{isEven}}</td>
+            <td>{{isOdd}}</td>
+            <td>{{isFirst}}</td>
+            <td>{{isLast}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

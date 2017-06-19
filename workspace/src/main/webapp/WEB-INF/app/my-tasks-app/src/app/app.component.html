@@ -1,0 +1,51 @@
+<h1>
+  {{title}}
+</h1>
+<hr/>
+<div>
+
+  <div class="tab-container" showOneContainerDirective>
+
+    <ul class="tab-buttons">
+      <li showOneTriggerDirective="tasks" [active]="true">Tasks</li>
+      <li showOneTriggerDirective="search">Search</li>
+      <li showOneTriggerDirective="color-preview">Color Preview</li>
+      <li showOneTriggerDirective="color-selector">Color Select</li>
+      <li showOneTriggerDirective="heroes">Heroes</li>
+    </ul>
+
+    <div class="tab-panel" showOneDirective="tasks" [active]="true">
+      <input class="add-task" placeholder="Add Task"
+             (keyup.enter)="taskService.createTask(inputTaskName.value)" #inputTaskName>
+
+      <app-task-list [tasks]="taskService.tasks"></app-task-list>
+    </div>
+
+    <div class="tab-panel" showOneDirective="search">
+      <task-search-box placeholderText="Some Text 2"></task-search-box>
+      <task-search-box placeholderText="Some Text 3"></task-search-box>
+      <task-search-box placeholderText="Some Text 4"></task-search-box>
+      <task-search-box placeholderText="Some Text 5"></task-search-box>
+    </div>
+
+    <div class="tab-panel" showOneDirective="color-preview">
+      <color-picker #picker color="green" (color)="previewer.color = $event"></color-picker>
+      <button (click)="picker.reset()">Reset</button>
+      <button (click)="reset()">App Reset</button>
+      <app-color-previewer #previewer color="red"></app-color-previewer>
+    </div>
+
+    <hr/>
+
+    <div class="tab-panel" showOneDirective="color-selector">
+      <app-color-sample #sample></app-color-sample>
+      <input (keyup)="sample.color = input.value" #input placeholder="Type your color"/>
+    </div>
+
+    <div class="tab-panel" showOneDirective="heroes">
+      <app-hero-table></app-hero-table>
+    </div>
+
+  </div>
+
+</div>

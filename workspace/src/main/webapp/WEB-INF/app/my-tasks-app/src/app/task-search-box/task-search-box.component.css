@@ -1,0 +1,14 @@
+.btn {
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+.btn-find {
+  background: #00ff3f;
+  color: white;
+}
+
+.btn-clear {
+  background: #ff00aa;
+  color: white;
+}
