@@ -1,4 +1,4 @@
-create database "mysports"
+create database mysports;
 
 CREATE USER 'adminsports'@'localhost' IDENTIFIED BY 'S0uthern';
 
